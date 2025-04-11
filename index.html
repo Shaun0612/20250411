@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <ul class="menu">
+      <li><a href="#">首頁</a></li>
+      <li><a href="#">自我介紹</a></li>
+      <li class="dropdown">
+        <a href="#">作品集</a>
+        <ul class="submenu">
+          <li><a href="#" data-url="https://prts.wiki/w/%E9%A6%96%E9%A1%B5">第一周</a></li>
+          <li><a href="#" data-url="https://prts.wiki/w/%E5%85%AC%E6%8B%9B%E8%AE%A1%E7%AE%97">第二周</a></li>
+          <li><a href="#" data-url="https://example.com/third-week">第三周</a></li>
+          <li><a href="#" data-url="https://example.com/fourth-week">第四周</a></li>
+        </ul>
+      </li>
+      <li><a href="#">測驗卷</a></li>
+      <li><a href="#">教學影片</a></li>
+    </ul>
+
+    <!-- iframe 用於顯示網頁 -->
+    <iframe id="content-frame" src="" frameborder="0"></iframe>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>

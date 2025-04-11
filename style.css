@@ -1,0 +1,97 @@
+/* CSS主要設定網頁html的格式設定 */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 確保畫布 (sketch) 在最底層 */
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* 最底層 */
+}
+
+/* 選單在最上層 */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  display: flex;
+  gap: 2%;
+  z-index: 2;
+  opacity: 0; /* 初始透明度為 0 */
+  transform: translateY(-20px); /* 初始位置稍微向上 */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* 過渡效果 */
+}
+
+.menu.show {
+  opacity: 1; /* 顯示時透明度為 1 */
+  transform: translateY(0); /* 回到原始位置 */
+}
+
+.menu.hide {
+  opacity: 0; /* 隱藏時透明度為 0 */
+  transform: translateY(-20px); /* 向上滑動隱藏 */
+}
+
+.menu li {
+  position: relative;
+  display: inline;
+  white-space: nowrap; /* 確保文字不換行 */
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap; /* 確保文字不換行 */
+}
+
+.menu a:hover {
+  color: blue;
+}
+
+.menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid black;
+  display: flex; /* 使用 flex 排列 */
+  flex-direction: column; /* 設置為垂直排列 */
+}
+
+.menu .submenu li {
+  padding: 5px 10px;
+  width: 150px; /* 設定子選單項目的固定寬度 */
+}
+
+.menu .submenu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu .dropdown:hover .submenu {
+  display: flex; /* 滑鼠懸停時顯示子選單 */
+}
+
+/* iframe 在第二層 */
+iframe#content-frame {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1; /* 第二層 */
+}
